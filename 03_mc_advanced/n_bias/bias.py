@@ -2,13 +2,16 @@ import numpy as np
 
 N = 2**16
 
-a = 1.0 / np.random.randint(1, 6, (N))
+np.random.seed(1)
+a = np.random.randint(1, 7, (N))
 def calc(m):
-    z = np.zeros(m)
-    for i in range(m):
+    b = int(N/m)
+    z = np.zeros(b)
+    for i in range(b):
         z[i] = np.average(a[i*m:(i+1)*m])
+    z = 1.0/z
     ave = np.average(z)
-    err = np.std(z)/np.sqrt(m)
+    err = np.std(z)/np.sqrt(len(z))
     print(f"{m} {ave} {err}")
 
 
