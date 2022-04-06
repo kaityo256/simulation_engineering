@@ -254,3 +254,34 @@ for i in range(4, 12):
     err = np.std(dd)/np.sqrt(n)
     print(f"{n} {ave} {err}")
 ```
+
+このコードが生成したデータのグラフは以下の通り。
+
+![corr2](case2/corr2_line.png)
+
+こちらではデータが「真の値」の両側にばらついており、もっともらしい。
+
+#### エラーバーが小さすぎるグラフ
+
+![langevin](case3/langevin.png)
+
+![langevin_line](case3/langevin_line.png)
+
+```py
+import numpy as np
+
+N = 1000
+v = 0.0
+gamma = 0.1
+np.random.seed(1)
+
+for j in range(10):
+    d = np.zeros(N)
+    for i in range(N):
+        v += np.random.randn()*0.1
+        v -= gamma * v
+        d[i] = v
+    ave = np.average(d)
+    err = np.std(d) / np.sqrt(N)
+    print(f"{(j+0.5)*N} {ave} {err}")
+```
