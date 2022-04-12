@@ -20,7 +20,7 @@ $$
 まず、エラーバーを定義しよう。観測するたびに値が変化する観測量を確率変数$\hat{X}$とする。これを$N$回観測し、$i$番目の観測データを$X_i$としよう。確率変数$\hat{X}$の平均値$\bar{X}$と分散$\sigma^2$は以下のように与えられる。
 
 $$
-\bar{X} = \frac{1}{N} \sum_i X_i \equiv
+\bar{X} = \frac{1}{N} \sum_i X_i
 $$
 
 $$
@@ -443,7 +443,7 @@ $$
 これは、一般に確率変数$\hat{X}$について、関数の期待値と期待値の関数は一致しないからだ。
 
 $$
-\left< g(\hat{X})\right> \neq g\left(\left<\hat{X} \right>\right) 
+\left< g(\hat{X})\right> \neq g\left(\left<\hat{X} \right>\right)
 $$
 
 TODO: Jensenの不等式の説明
